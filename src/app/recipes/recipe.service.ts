@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +8,16 @@ import { Recipe } from './recipe.model';
 export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://assets.bonappetit.com/photos/64349ba03fd52da4745a35f4/1:1/w_3563,h_3563,c_limit/04102023-ratatouille-lede.jpg'
+      'Tasty Schnitzel',
+      'A super-tasty Schnitzel - just awasome!',
+      'https://cdn.britannica.com/37/236537-050-B1FD777B/Plate-of-German-Weiner-Schnitzel-with-lemon-and-roast-potatoes.jpg',
+      [new Ingredient('Meat', 1), new Ingredient('Potato', 3)]
+    ),
+    new Recipe(
+      'Big Fat Burger',
+      'What else you need to say?',
+      'https://burgerkings.ru/image/cache/catalog/photo/824197451-angus-shef-xl-600x600.jpg',
+      [new Ingredient('Buns', 2), new Ingredient('Meat', 2)]
     ),
   ];
 
